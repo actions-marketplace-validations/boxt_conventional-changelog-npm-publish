@@ -2,7 +2,7 @@ name: "Boxt - NPM version and publish"
 description: "Based upon a conventional changelog, versions and publishes a new NPM package to the registry"
 branding:
   icon: box
-  color: purple
+  color: red
 author: "Boxt"
 inputs:
   author_email:

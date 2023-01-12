@@ -1,5 +1,7 @@
-# Conventional changelog npm publish action
+# Conventional changelog NPM publish action
+
 This action does a few things:
+
 1. Uses [conventional-recommended-bump](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-recommended-bump) to identify required `patch`, `minor` or `major` version change
 2. Runs `npm version` with the output of the above
 3. Performs an `npm publish` to the already setup repository (`setup-node`)
@@ -25,19 +27,17 @@ name: npm-build-publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   npm-build-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@master
+      - uses: actions/checkout@v3
       # required - sets up auth in the node env
-      - name: Set up Node.js
-        uses: actions/setup-node@master
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16.x
           registry-url: 'https://npm.pkg.github.com'
       # optional
       - run: npm install
@@ -47,12 +47,13 @@ jobs:
           CI: true
       # required
       - name: version & publish
-        uses: geeman201/conventional-changelog-npm-publish/@v14
+        uses: boxt/conventional-changelog-npm-publish/@v1
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ### Future work
+
 * [ ] Push release also to github releases tab (should be a simple api call)
 * [ ] `conventional-recommended-bump` supports different commit message models (but I couldn't get the `preset` to work)
 * [ ] This library uses `exec` for most of its work making it near impossible to test - everything else sits within external libraries.
