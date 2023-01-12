@@ -47,7 +47,7 @@ jobs:
           CI: true
       # required
       - name: version & publish
-        uses: boxt/conventional-changelog-npm-publish/@v1
+        uses: boxt/conventional-changelog-npm-publish/@v1.0.2
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
