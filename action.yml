@@ -1,9 +1,9 @@
-name: "npm version and publish"
-description: "Based upon a conventional changelog, versions and publishes a new npm package to the registry"
+name: "Boxt - NPM version and publish"
+description: "Based upon a conventional changelog, versions and publishes a new NPM package to the registry"
 branding:
   icon: box
   color: purple
-author: "James Gee"
+author: "Boxt"
 inputs:
   author_email:
     description: "After the version is incremented - the user that makes the commit"
