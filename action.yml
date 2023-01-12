@@ -1,22 +1,22 @@
-name: 'npm version and publish'
-description: 'Based upon a conventional changelog, versions and publishes a new npm package to the registry'
+name: "npm version and publish"
+description: "Based upon a conventional changelog, versions and publishes a new npm package to the registry"
 branding:
   icon: box
   color: purple
-author: 'James Gee'
+author: "James Gee"
 inputs:
   author_email:
-    description: 'After the version is incremented - the user that makes the commit'
+    description: "After the version is incremented - the user that makes the commit"
     required: false
-    default: 'conventional-changelog-npm-publish@noreply.github.com'
+    default: "conventional-changelog-npm-publish@noreply.github.com"
   author_name:
-    description: 'After the version is incremented - the user that makes the commit'
+    description: "After the version is incremented - the user that makes the commit"
     required: false
-    default: 'conventional-changelog-npm-publish'
+    default: "conventional-changelog-npm-publish"
   commit_message:
-    description: 'Commit message - [VERSION_TYPE] is replaced with either patch, minor or major'
+    description: "Commit message - [VERSION_TYPE] is replaced with either patch, minor or major"
     required: false
-    default: 'Bumping [VERSION_TYPE] version'
+    default: "Bumping [VERSION_TYPE] version"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node18"
+  main: "dist/index.js"
